@@ -32,7 +32,7 @@ import logging
 logging.basicConfig(     
     format='%(asctime)s\t%(levelname)s\t%(message)s',
     filemode='w', # overwrite or append 
-    filename='{}\log\letttura_WS_TEAS.log'.format(spath),  # nome file (commentandolo viene stampato a schermo
+    filename='{}/log/lettura_WS_TEAS.log'.format(spath),  # nome file (commentandolo viene stampato a schermo
     level=logging.DEBUG
     )
 
