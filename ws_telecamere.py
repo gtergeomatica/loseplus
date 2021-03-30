@@ -71,7 +71,7 @@ for i in data['data']:
     query1=u'INSERT INTO terra.transiti (data_ora, id_gate, targa, tipo_veicolo, descrizione_merce_pericolosa) VALUES(%s,%s , %s, %s, %s);'
     vars1=data_ora, gate, targa, tipo_veicolo, descr
     try:
-        #print(query1)
+        
         cur.execute(query1,vars1)
         conn.commit()
         k+=1
@@ -86,20 +86,12 @@ for i in data['data']:
             kk+=1
         except Exception as e2:
             logging.error(e2)
-            logging.error(query2)
+            #logging.error(query2)
 
 
 cur.close()
 conn.close()
     
 
-# qua c'è da mettere la parte in psycopg2
+
 logging.info('Ho finito. Inseriti {} nuovi transiti, aggiornati {} sui 7 giorni precedenti'.format(k, kk))
-#print(r.status_code)
-#print(r.headers['content-type'])
-
-#print('***********************************')
-
-
-#print(r.encoding)
-#print(r.json())
