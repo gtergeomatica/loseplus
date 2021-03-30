@@ -1,19 +1,7 @@
-# loseplus
-Script vari per il progetto Lose +
+# Descrizione
 
+Script per importare i dati dai WS di TEAS su geoDB Lose+
 
-credenziali.py contiene credenziali di accesso a DB e WS TEAS
+## Dipendenze 
 
-```
-ip='localhost'
-db='XXXXXXX'
-user='XXXXXXX'
-pwd='XXXXXXX'
-port='5432'
-
-
-ws_user='XXXXXXX'
-ws_pwd='XXXXXXX'
-
-```
-
+sudo pip3 install psycopg2
