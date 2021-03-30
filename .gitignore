@@ -1,3 +1,11 @@
+log/*.log
+credenziali.py
+
+
+
+
+# default python
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
