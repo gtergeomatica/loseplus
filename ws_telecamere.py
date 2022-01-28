@@ -46,7 +46,7 @@ logging.debug(oggi)
 logging.debug(settimana_prima)
 
 url0='https://losews.comune.genova.it/IPViewVisualAnalytics/lose.asmx/transits'
-url= '{}?date_start={}&time_start=000000&date_end={}&time_end=235959&gates=25;26;27;28;29;30;31;32'.format(url0, settimana_prima, oggi)
+url= '{}?date_start={}&time_start=000000&date_end={}&time_end=235959&gates=25;26;27;28;29;30;31;32;33;34'.format(url0, settimana_prima, oggi)
 
   
 r = requests.get(url, auth=(ws_user, ws_pwd))
