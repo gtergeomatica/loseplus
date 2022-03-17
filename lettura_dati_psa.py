@@ -77,6 +77,8 @@ while i < len(onlyfiles):
             lun=row[2].value
             # 5 tipo imballaggio
             imb=row[5].value
+            # 7 data arrivo
+            d_a=row[7].value
             # 8 UNNumber
             if row[8].value.strip()=='':
                 UNn=0
@@ -90,18 +92,18 @@ while i < len(onlyfiles):
             else: 
                 giac=row[10].value
             query_insert='''INSERT INTO terra.giacenze_psa
-            (id_container, lungh_ft, tipo_imballaggio, un_numb, imdg, giacenza, i_e_t_d)
-            VALUES(%s, %s, %s, %s, %s, %s, %s)
+            (id_container, lungh_ft, tipo_imballaggio, un_numb, imdg, giacenza, i_e_t_d, data_arrivo)
+            VALUES(%s, %s, %s, %s, %s, %s, %s, %s)
             '''
             try:
-                curr.execute(query_insert, (con, lun, imb, UNn, imdg, giac, i_e_t_d))
+                curr.execute(query_insert, (con, lun, imb, UNn, imdg, giac, i_e_t_d, d_a))
             except Exception as e:
                 logging.info(e)
                 query_update=''' UPDATE terra.giacenze_psa
-                SET lungh_ft=%s, tipo_imballaggio=%s, un_numb=%s, imdg=%s, giacenza=%s, i_e_t_d=%s
+                SET lungh_ft=%s, tipo_imballaggio=%s, un_numb=%s, imdg=%s, giacenza=%s, i_e_t_d=%s, data_arrivo=%s
                 WHERE id_container=%s '''
                 try:
-                    curr.execute(query_update, (lun, imb, UNn, imdg, giac, i_e_t_d, con))
+                    curr.execute(query_update, (lun, imb, UNn, imdg, giac, i_e_t_d, d_a, con))
                 except Exception as e:
                     logging.error('File {} - Container {} - problema update'.format(onlyfiles[i], row[0].value))
                     logging.error(e)
